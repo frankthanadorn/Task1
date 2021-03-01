@@ -1,5 +1,6 @@
 import Slider from "./Slider";
 import Circle from "./Circle";
+import Image from "./Image";
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <header className="App-header">
         <Slider/>
         <Circle/>
+        <Image/>
       </header>
     </div>
   );

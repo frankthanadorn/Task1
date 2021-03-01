@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { Stage, Layer, Circle } from 'react-konva';
+
+import { Stage, Layer, Image, Circle } from 'react-konva';
+import useImage from 'use-image';
+import Images from "./Image"
 function generateShapes() {
     return [...Array(50)].map((_, i) => ({
       id: i.toString(),
@@ -43,24 +46,24 @@ export default function Kodava() {
       <Stage width={360} height={438}>
       
           <Layer >
-              
+          <Images src="http://128.199.244.46:4000/getimage?image=inferNone94323.jpeg" />
    
               {circles.map((circle) => (
                   <>
                       <Circle
-                           key={circle.id}
-                           id={circle.id}
-          x={circle.x}
-          y={circle.y}
-            draggable
-            radius={10}
-                          fill="yellow"
-                          opacity={0.8}
-                          onDragStart={handleDragStart}
-                          onDragEnd={handleDragEnd}
-                          shadowColor="black"
-                          shadowBlur={10}
-                          shadowOpacity={0.6}
+                            key={circle.id}
+                            id={circle.id}
+                            x={circle.x}
+                            y={circle.y}
+                            draggable
+                            radius={5}
+                            fill="yellow"
+                            opacity={0.8}
+                            onDragStart={handleDragStart}
+                            onDragEnd={handleDragEnd}
+                            shadowColor="black"
+                            shadowBlur={10}
+                            shadowOpacity={0.6}
           />
        
                       </>
