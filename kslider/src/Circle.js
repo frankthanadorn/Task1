@@ -1,15 +1,13 @@
 import React from 'react';
-
-
 import { Stage, Layer, Image, Circle } from 'react-konva';
-import useImage from 'use-image';
-import Images from "./Image"
+import Images from "./Image";
 function generateShapes() {
     return [...Array(50)].map((_, i) => ({
       id: i.toString(),
       x: Math.random() * 360,
       y: Math.random() * 438,
-  
+      //try add weight
+      weight: Math.random().toFixed(2),
       isDragging: false,
     }));
 }
