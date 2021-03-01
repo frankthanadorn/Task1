@@ -31,7 +31,7 @@ export default function RangeSlider() {
 
   return (
     <div className={classes.root}>
-      <h1>Task1.1</h1>
+      <h1>Task 1</h1>
       <Slider
         value={value}
         onChange={handleChange}
