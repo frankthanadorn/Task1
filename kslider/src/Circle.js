@@ -58,12 +58,12 @@ export default function Kodava() {
                             draggable
                             radius={5}
                             fill="yellow"
-                            opacity={0.8}
+                            opacity={0.5}
                             onDragStart={handleDragStart}
                             onDragEnd={handleDragEnd}
-                            shadowColor="black"
-                            shadowBlur={10}
-                            shadowOpacity={0.6}
+                            shadowColor="white"
+                            shadowBlur={5}
+                            shadowOpacity={0.9}
           />
        
                       </>
