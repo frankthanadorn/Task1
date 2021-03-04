@@ -8,38 +8,27 @@ const useStyles = makeStyles({
   },
 });
 
-function valuetext(value) {
-  return `${value}°C`;
-}
 
-export default function RangeSlider() {
+export default function DiscreteSlider(props) {
+  const {value,setValue}=props
   const classes = useStyles();
-  const [value, setValue] = React.useState([0, 10]);
 
   const handleChange = (event, newValue) => {
-    const maxDiff = 1;
-    const min = newValue[0], max = newValue[1];
-    const diff = max - min;
-
-    // const diff = +parseFloat(max - min).toFixed(2);
-
-    console.log(min, max, diff);
-    if (diff >= maxDiff) {
-      setValue(newValue);
-    }
+    if (((newValue[1]-newValue[0])>0.01) && 
+    ((value[1]-value[0])>0.01)) {
+        setValue(newValue)
+    } 
   };
 
   return (
     <div className={classes.root}>
-      <h1>Task 1</h1>
       <Slider
         value={value}
         onChange={handleChange}
-        step={0.01}
-        min={0}
-        max={10}
-        valueLabelDisplay="on"
-        getAriaValueText={valuetext}
+        valueLabelDisplay="auto"
+        min = {0.00}
+        max = {10.00}
+        step = {0.01}
       />
     </div>
   );

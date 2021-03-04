@@ -1,21 +1,10 @@
 import React from 'react';
-import { Stage, Layer, Image, Circle } from 'react-konva';
+import { Stage, Layer, Circle } from 'react-konva';
 import Images from "./Image";
-function generateShapes() {
-    return [...Array(50)].map((_, i) => ({
-      id: i.toString(),
-      x: Math.random() * 360,
-      y: Math.random() * 438,
-      //try add weight
-      weight: Math.random().toFixed(2),
-      isDragging: false,
-    }));
-}
-const INITIAL_STATE = generateShapes();
 
-export default function Kodava() {
+export default function Kodava(props) {
 
-    const [circles, setCircles] = React.useState(INITIAL_STATE);
+  const { circles, setCircles } = props
     const handleDragStart = (e) => {
         const id = e.target.id();
         setCircles(
