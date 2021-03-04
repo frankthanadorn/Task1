@@ -5,27 +5,7 @@ import Images from "./Image";
 export default function Kodava(props) {
 
   const { circles, setCircles } = props
-    const handleDragStart = (e) => {
-        const id = e.target.id();
-        setCircles(
-            circles.map((circle) => {
-            return {
-              ...circle,
-              isDragging: circle.id === id,
-            };
-          })
-        );
-    };
-    const handleDragEnd = (e) => {
-        setCircles(
-            circles.map((circle) => {
-            return {
-              ...circle,
-              isDragging: false,
-            };
-          })
-        );
-      };
+    
     
   return (
  
@@ -42,14 +22,13 @@ export default function Kodava(props) {
                             id={circle.id}
                             x={circle.x}
                             y={circle.y}
-                            draggable
-                            radius={5}
+                            
+                            radius={7}
                             fill="yellow"
                             opacity={0.5}
-                            onDragStart={handleDragStart}
-                            onDragEnd={handleDragEnd}
+                            
                             shadowColor="white"
-                            shadowBlur={5}
+                            shadowBlur={4}
                             shadowOpacity={0.9}
           />
        
