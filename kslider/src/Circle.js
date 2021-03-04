@@ -4,7 +4,7 @@ import Images from "./Image";
 
 export default function Kodava(props) {
 
-  const { circles, setCircles } = props
+  const { circles} = props
     
     
   return (
@@ -13,7 +13,7 @@ export default function Kodava(props) {
       <Stage width={360} height={438}>
       
           <Layer >
-          <Images src="http://128.199.244.46:4000/getimage?image=inferNone94323.jpeg" />
+          <Images src="http://128.199.244.46:4000/getimage?image=inferNone94323.jpeg" x={5} y={-10}/>
    
               {circles.map((circle) => (
                   <>
